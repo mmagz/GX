@@ -1,0 +1,39 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "echo 'No build step required for Node.js backend'",
+    "upload:images": "node scripts/uploadCloudinaryFromImages.js",
+    "cleanup:old": "node scripts/cleanupOldProducts.js",
+    "upload:shiva": "node scripts/uploadShivaImages.js",
+    "upload:lockets": "node scripts/uploadLocketImages.js",
+    "upload:cargo-jeans": "node scripts/uploadCargoJeansImages.js",
+    "upload:capsule-banner": "node scripts/uploadCapsuleBanner.js",
+    "add:stock": "node scripts/addStockToProducts.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "-": "^0.0.1",
+    "@clerk/express": "^1.7.37",
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "g": "^2.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.3",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.4",
+    "npm": "^11.6.0",
+    "razorpay": "^2.9.4",
+    "stripe": "^16.8.0",
+    "validator": "^13.12.0"
+  }
+}

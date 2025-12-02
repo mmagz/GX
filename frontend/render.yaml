@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: xoned-frontend
+    env: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://getxoned.onrender.com
+      - key: VITE_CLERK_PUBLISHABLE_KEY
+        value: pk_test_dml0YWwtZHJ1bS0zLmNsZXJrLmFjY291bnRzLmRldiQ

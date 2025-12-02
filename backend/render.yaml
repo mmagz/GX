@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: xoned-backend
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        value: https://getxoned-frontend.onrender.com,https://getxoned-admin.onrender.com
+
+databases:
+  - name: xoned-db
+    plan: free
+    databaseName: xoned
+    user: xoned_user

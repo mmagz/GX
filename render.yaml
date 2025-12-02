@@ -1,0 +1,59 @@
+services:
+  # Backend API Service
+  - type: web
+    name: xoned-backend
+    env: node
+    plan: starter
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        value: https://getxoned-frontend.onrender.com,https://getxoned-admin.onrender.com
+
+  # Frontend Static Site
+  - type: web
+    name: xoned-frontend
+    env: static
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://getxoned.onrender.com
+      - key: VITE_CLERK_PUBLISHABLE_KEY
+        value: pk_test_dml0YWwtZHJ1bS0zLmNsZXJrLmFjY291bnRzLmRldiQ
+
+  # Admin Dashboard Static Site
+  - type: web
+    name: xoned-admin
+    env: static
+    plan: free
+    buildCommand: cd admin && npm install && npm run build
+    staticPublishPath: ./admin/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://getxoned.onrender.com
+      - key: VITE_CLERK_PUBLISHABLE_KEY
+        value: pk_test_dml0YWwtZHJ1bS0zLmNsZXJrLmFjY291bnRzLmRldiQ
+
+databases:
+  - name: xoned-db
+    plan: free
+    databaseName: xoned
+    user: xoned_user
