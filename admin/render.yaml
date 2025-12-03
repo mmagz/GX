@@ -7,6 +7,6 @@ services:
     staticPublishPath: ./dist
     envVars:
       - key: VITE_API_URL
-        value: https://getxoned.onrender.com
+        value: https://api.getxoned.onrender.com
       - key: VITE_CLERK_PUBLISHABLE_KEY
         sync: false
