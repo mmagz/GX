@@ -6,7 +6,7 @@
   export default defineConfig({
     plugins: [react()],
     define: {
-      'import.meta.env.VITE_API_URL': JSON.stringify('https://admin.naturesoap.in/'),
+      'import.meta.env.VITE_API_URL': JSON.stringify('https://getxoned.onrender.com/'),
       'import.meta.env.VITE_CLERK_PUBLISHABLE_KEY': JSON.stringify('pk_test_dml0YWwtZHJ1bS0zLmNsZXJrLmFjY291bnRzLmRldiQ'),
     },
     resolve: {
