@@ -25,7 +25,7 @@ connectCloudinary()
 // middlewares
 app.use(express.json())
 // CORS: allow local dev + configured production origins
-const allowedOrigins = (process.env.CORS_ORIGINS || 'http://localhost:3000,http://localhost:5173,https://getxoned-frontend.onrender.com,https://getxoned-admin.onrender.com,https://admin.naturesoap.in').split(',')
+const allowedOrigins = (process.env.CORS_ORIGINS || 'http://localhost:3000,http://localhost:5173,https://getxoned-frontend.onrender.com,https://getxoned-admin.onrender.com,https://www.getxoned.com/,https://admin.naturesoap.in').split(',')
 app.use(cors({
     origin: (origin, cb) => {
         if (!origin) return cb(null, true) // allow non-browser tools
