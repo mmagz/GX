@@ -12,12 +12,12 @@ const adminAuth = async (req, res, next) => {
         
         // For now, allow your specific user ID for testing
         // In production, you should fetch user metadata from Clerk API
-      //  const allowedTestUserIds = ['user_33dofSrp63OzwzyUhUGYAg4mQfb']
-       // const userId = auth?.userId
+        const allowedTestUserIds = ['user_33dofSrp63OzwzyUhUGYAg4mQfb']
+        const userId = auth?.userId
         
-      //  if (allowedTestUserIds.includes(userId)) {
-       //     console.log('Admin access granted for user:', userId)
-       //     return next()
+       if (allowedTestUserIds.includes(userId)) {
+            console.log('Admin access granted for user:', userId)
+           return next()
         }
         
         // If not in allowed list, check for role in claims (if available)
